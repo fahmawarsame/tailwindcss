@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex flex-col items-center justify-center">
+
+    <h1 class="text-white text-3xl font-bold mb-8">
+        Traffic Light
+    </h1>
+
+    <!-- Traffic Light Box -->
+    <div class="bg-gray-700 p-6 rounded-3xl shadow-2xl">
+
+        <!-- Red Light -->
+        <div id="red"
+             class="w-20 h-20 bg-red-950 rounded-full mb-4 border-4 border-gray-600">
+        </div>
+
+        <!-- Yellow Light -->
+        <div id="yellow"
+             class="w-20 h-20 bg-yellow-950 rounded-full mb-4 border-4 border-gray-600">
+        </div>
+
+        <!-- Green Light -->
+        <div id="green"
+             class="w-20 h-20 bg-green-950 rounded-full border-4 border-gray-600">
+        </div>
+
+    </div>
+
+    <!-- Start and Stop Buttons -->
+    <div class="mt-8 space-x-4">
+        <button
+            id="startBtn"
+            onclick="startTrafficLight()"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg">
+            Start
+        </button>
+
+        <button
+            onclick="stopTrafficLight()"
+            class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg">
+            Stop
+        </button>
+    </div>
+
+    <p id="status" class="text-white mt-6 text-lg">
+        Press Start
+    </p>
+
+    <script>
+        // Get the three lights
+        const red = document.getElementById("red");
+        const yellow = document.getElementById("yellow");
+        const green = document.getElementById("green");
+        const status = document.getElementById("status");
+
+        // Store the timer
+        let timer = null;
+        let currentLight = 0;
+
+        // Function to turn all lights off
+        function turnAllLightsOff() {
+            red.className =
+                "w-20 h-20 bg-red-950 rounded-full mb-4 border-4 border-gray-600";
+
+            yellow.className =
+                "w-20 h-20 bg-yellow-950 rounded-full mb-4 border-4 border-gray-600";
+
+            green.className =
+                "w-20 h-20 bg-green-950 rounded-full border-4 border-gray-600";
+        }
+
+        // Function to change the traffic light
+        function changeLight() {
+            turnAllLightsOff();
+
+            if (currentLight === 0) {
+                // Turn red on
+                red.classList.replace("bg-red-950", "bg-red-500");
+                red.classList.add("shadow-lg", "shadow-red-500");
+
+                status.textContent = "RED - Stop!";
+            }
+
+            else if (currentLight === 1) {
+                // Turn yellow on
+                yellow.classList.replace("bg-yellow-950", "bg-yellow-400");
+                yellow.classList.add("shadow-lg", "shadow-yellow-400");
+
+                status.textContent = "YELLOW - Get ready!";
+            }
+
+            else if (currentLight === 2) {
+                // Turn green on
+                green.classList.replace("bg-green-950", "bg-green-500");
+                green.classList.add("shadow-lg", "shadow-green-500");
+
+                status.textContent = "GREEN - Go!";
+            }
+
+            // Move to the next light
+            currentLight = (currentLight + 1) % 3;
+        }
+
+        // Start the traffic light sequence
+        function startTrafficLight() {
+            if (timer !== null) return;
+
+            changeLight();
+
+            timer = setInterval(changeLight, 3000);
+        }
+
+        // Stop the traffic light sequence
+        function stopTrafficLight() {
+            clearInterval(timer);
+            timer = null;
+
+            turnAllLightsOff();
+            status.textContent = "Traffic light stopped";
+        }
+    </script>
+
+</body>
+</html>
