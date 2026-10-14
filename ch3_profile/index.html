@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile | Fahma</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#111c2e",
+            brand: "#2563eb"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="bg-navy text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+
+      <a href="#" class="flex items-center gap-2 text-xl font-bold">
+        <i data-lucide="layers" class="text-blue-400"></i>
+        MyProfile
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#home" class="text-blue-400 font-semibold">Home</a>
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button aria-label="Notifications"
+          class="hidden sm:block hover:text-blue-400">
+          <i data-lucide="bell"></i>
+        </button>
+
+        <img
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
+          alt="Profile avatar"
+          class="w-10 h-10 rounded-full border-2 border-blue-400 object-cover"
+        >
+      </div>
+    </div>
+  </nav>
+
+  <main id="home" class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+
+    <!-- PROFILE HEADER -->
+    <section class="bg-white rounded-2xl shadow-sm overflow-hidden mb-7">
+
+      <!-- COVER IMAGE -->
+      <div class="h-48 md:h-64 relative">
+        <img
+          src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1800&auto=format&fit=crop"
+          alt="Beautiful evening city skyline"
+          class="w-full h-full object-cover"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
+
+        <span class="absolute bottom-5 left-6 text-white text-sm font-medium">
+          <i data-lucide="map-pin" class="inline w-4 h-4"></i>
+          London, United Kingdom
+        </span>
+      </div>
+
+      <!-- PROFILE DETAILS -->
+      <div class="px-6 md:px-10 pb-7">
+
+        <div class="flex flex-col md:flex-row md:items-end gap-5">
+
+          <img
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=faces"
+            alt="Profile portrait"
+            class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-lg -mt-16 relative"
+          >
+
+          <div class="flex-1 md:pb-2">
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-900">
+              Fahma Warsame
+              <i data-lucide="badge-check"
+                class="inline w-6 h-6 text-blue-500"></i>
+            </h1>
+
+            <p class="text-slate-500 mt-2">
+              Web Developer <span class="mx-2">•</span>
+              Lifelong Learner <span class="mx-2">•</span>
+              London, UK
+            </p>
+          </div>
+
+          <div class="flex gap-3 md:pb-2">
+            <button id="editBtn"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-medium flex items-center gap-2 transition">
+              <i data-lucide="user-pen" class="w-4 h-4"></i>
+              Edit Profile
+            </button>
+
+            <a href="mailto:fahma@example.com"
+              class="border border-slate-200 hover:bg-slate-50 px-5 py-2.5 rounded-lg font-medium flex items-center gap-2 transition">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              Message
+            </a>
+          </div>
+        </div>
+
+        <p class="max-w-3xl text-slate-600 leading-7 mt-5">
+          Passionate about creating simple, beautiful and functional web
+          experiences. Currently learning and building with HTML,
+          Tailwind CSS, JavaScript and more.
+        </p>
+
+        <!-- STATISTICS -->
+        <div class="flex gap-10 mt-7">
+          <div>
+            <p class="text-xl font-bold text-slate-900">12</p>
+            <p class="text-sm text-slate-500">Posts</p>
+          </div>
+
+          <div>
+            <p class="text-xl font-bold text-slate-900">248</p>
+            <p class="text-sm text-slate-500">Followers</p>
+          </div>
+
+          <div>
+            <p class="text-xl font-bold text-slate-900">180</p>
+            <p class="text-sm text-slate-500">Following</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- SIDEBAR -->
+      <aside class="space-y-6">
+
+        <div class="bg-white rounded-2xl shadow-sm p-4">
+          <h2 class="font-bold text-slate-900 px-3 mb-4">Dashboard</h2>
+
+          <nav class="space-y-2">
+            <a href="#home"
+              class="flex items-center gap-3 bg-blue-50 text-blue-600 px-4 py-3 rounded-xl font-medium">
+              <i data-lucide="house" class="w-5 h-5"></i>
+              Profile
+            </a>
+
+            <a href="#activity"
+              class="flex items-center gap-3 hover:bg-slate-50 px-4 py-3 rounded-xl transition">
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+              Posts
+            </a>
+
+            <a href="#projects"
+              class="flex items-center gap-3 hover:bg-slate-50 px-4 py-3 rounded-xl transition">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+              Projects
+            </a>
+
+            <a href="#skills"
+              class="flex items-center gap-3 hover:bg-slate-50 px-4 py-3 rounded-xl transition">
+              <i data-lucide="star" class="w-5 h-5"></i>
+              Skills
+            </a>
+
+            <a href="#contact"
+              class="flex items-center gap-3 hover:bg-slate-50 px-4 py-3 rounded-xl transition">
+              <i data-lucide="settings" class="w-5 h-5"></i>
+              Contact & Settings
+            </a>
+          </nav>
+        </div>
+
+        <!-- QUICK INTRO -->
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl p-6 shadow-sm">
+          <div class="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+            <i data-lucide="rocket" class="w-6 h-6"></i>
+          </div>
+
+          <h2 class="text-lg font-bold">Always Growing</h2>
+
+          <p class="text-blue-100 text-sm leading-6 mt-2">
+            Learning something new every day and turning ideas into real projects.
+          </p>
+
+          <a href="#projects"
+            class="inline-flex items-center gap-2 mt-5 text-sm font-semibold hover:gap-3 transition-all">
+            Explore my work
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </aside>
+
+      <!-- ABOUT AND SKILLS -->
+      <div class="md:col-span-2 space-y-6">
+
+        <!-- ABOUT ME -->
+        <section id="about" class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+
+          <h2 class="text-xl font-bold flex items-center gap-3 mb-5">
+            <i data-lucide="user-round" class="text-blue-600"></i>
+            About Me
+          </h2>
+
+          <p class="text-slate-600 leading-7">
+            Hi, I'm Fahma! I'm a web developer based in London, UK.
+            I enjoy turning creative ideas into practical digital
+            experiences and learning new technologies. I am currently
+            improving my skills in frontend development and building
+            projects to grow my portfolio.
+          </p>
+
+          <div class="border-t border-slate-100 mt-6 pt-5 space-y-4">
+
+            <div class="flex items-center gap-3 text-slate-600">
+              <i data-lucide="map-pin" class="text-blue-600 w-5 h-5"></i>
+              London, United Kingdom
+            </div>
+
+            <div id="contact" class="flex items-center gap-3 text-slate-600">
+              <i data-lucide="mail" class="text-blue-600 w-5 h-5"></i>
+              fahma@example.com
+            </div>
+
+            <div class="flex items-center gap-3 text-slate-600">
+              <i data-lucide="calendar-days" class="text-blue-600 w-5 h-5"></i>
+              Joined August 2025
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+
+          <h2 class="text-xl font-bold flex items-center gap-3 mb-6">
+            <i data-lucide="star" class="text-blue-600"></i>
+            Skills & Technologies
+          </h2>
+
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">HTML5</span>
+            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
+            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">Git & GitHub</span>
+            <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">Linux</span>
+            <span class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Problem Solving</span>
+            <span class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Communication</span>
+            <span class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Teamwork</span>
+          </div>
+
+        </section>
+
+        <!-- FEATURED PROJECT -->
+        <section id="projects" class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+
+          <div class="flex justify-between items-center mb-5">
+            <h2 class="text-xl font-bold flex items-center gap-3">
+              <i data-lucide="briefcase-business" class="text-blue-600"></i>
+              Featured Project
+            </h2>
+
+            <span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full">
+              Portfolio
+            </span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5 items-center">
+
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&auto=format&fit=crop"
+              alt="Laptop showing a web development workspace"
+              class="w-full h-48 object-cover rounded-xl"
+            >
+
+            <div>
+              <h3 class="font-bold text-lg text-slate-900">
+                Personal Portfolio Website
+              </h3>
+
+              <p class="text-slate-500 text-sm leading-6 mt-2">
+                A responsive personal website built to showcase
+                my skills, projects and experience using HTML
+                and Tailwind CSS.
+              </p>
+
+              <a href="#home"
+                class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-sm mt-4">
+                View Project
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- RECENT ACTIVITY -->
+        <section id="activity" class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+
+          <h2 class="text-xl font-bold flex items-center gap-3 mb-6">
+            <i data-lucide="activity" class="text-blue-600"></i>
+            Recent Activity
+          </h2>
+
+          <div class="space-y-6">
+
+            <div class="flex gap-4">
+              <div class="w-3 h-3 rounded-full bg-green-500 mt-1.5"></div>
+              <div>
+                <p class="font-medium text-slate-800">Updated profile information</p>
+                <p class="text-xs text-slate-400 mt-1">2 hours ago</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-3 h-3 rounded-full bg-blue-500 mt-1.5"></div>
+              <div>
+                <p class="font-medium text-slate-800">Completed a new project</p>
+                <p class="text-xs text-slate-400 mt-1">1 day ago</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-3 h-3 rounded-full bg-purple-500 mt-1.5"></div>
+              <div>
+                <p class="font-medium text-slate-800">Started learning JavaScript</p>
+                <p class="text-xs text-slate-400 mt-1">3 days ago</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-slate-500 text-sm py-8">
+      <p>© 2026 MyProfile. Built with HTML & Tailwind CSS.</p>
+      <p class="mt-2">Designed with care 💙</p>
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT FOR ICONS AND EDIT BUTTON -->
+  <script>
+    lucide.createIcons();
+
+    document.getElementById("editBtn").addEventListener("click", function () {
+      alert("You can connect this button to a profile editing form!");
+    });
+  </script>
+
+</body>
+</html>
